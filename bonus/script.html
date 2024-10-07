@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI6 Car Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MI6 Car Search</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <label for="search-key">Search by:</label>
+            <select id="search-key">
+                <option value="brand">Brand</option>
+                <option value="model">Model</option>
+                <option value="color">Color</option>
+            </select>
+
+            <label for="search-value">Value:</label>
+            <input type="text" id="search-value" placeholder="Enter value...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="results">
+            <ul id="results-list">
+            
+        </ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
