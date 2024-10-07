@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.body.appendChild(dropdown);
 
-  // Partie fait avec Mathis (DEBUT)
+  /* Partie fait avec Mathis (DEBUT)*/
 
   const searchBar = document.createElement('input');
   searchBar.type = 'text';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const resultList = document.createElement('ul');
   document.body.appendChild(resultList);
-// Partie fait avec Mathis (FIN)
+/* Partie fait avec Mathis (FIN)*/
   
   searchButton.addEventListener('click', () => {
     resultList.innerHTML = '';
