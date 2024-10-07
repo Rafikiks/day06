@@ -1,0 +1,56 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const agents = [agent];
+
+  const dropdown = document.createElement('select');
+  const keys = ['brand', 'model', 'color', 'power'];
+  keys.forEach(key => {
+    const option = document.createElement('option');
+    option.value = key;
+    option.textContent = key;
+    dropdown.appendChild(option);
+  });
+  document.body.appendChild(dropdown);
+
+
+  const searchBar = document.createElement('input');
+  searchBar.type = 'text';
+  searchBar.placeholder = 'Enter value to search';
+  document.body.appendChild(searchBar);
+
+ 
+  const searchButton = document.createElement('button');
+  searchButton.textContent = 'Search';
+  document.body.appendChild(searchButton);
+
+  
+  const resultList = document.createElement('ul');
+  document.body.appendChild(resultList);
+
+  
+  searchButton.addEventListener('click', () => {
+    resultList.innerHTML = '';
+    const key = dropdown.value;
+    const value = searchBar.value;
+    const matchingCars = searchCars(agents, key, value);
+
+    matchingCars.forEach(car => {
+      const li = document.createElement('li');
+      li.textContent = `Car: ${car.brand}, Model: ${car.model}, Color: ${car.color}, Power: ${car.power}`;
+      resultList.appendChild(li);
+    });
+  });
+});
+
+/*
+  - Ajoute un gestionnaire d'événement pour l'événement `DOMContentLoaded` afin d'exécuter le code une fois que le DOM est chargé.
+  - Crée un tableau `agents` contenant un agent pour la recherche.
+  - Crée un menu déroulant (`dropdown`) permettant de sélectionner la clé de recherche (marque, modèle, couleur, puissance).
+  - Crée une barre de recherche (`searchBar`) pour entrer la valeur à rechercher.
+  - Crée un bouton de recherche (`searchButton`) qui lancera la recherche lorsque cliqué.
+  - Crée un élément de liste (`resultList`) pour afficher les voitures correspondantes.
+  - Ajoute un événement `click` au bouton de recherche pour effectuer la recherche :
+    - Récupère la clé et la valeur à partir du `dropdown` et de la `searchBar`.
+    - Utilise `searchCars()` pour trouver les voitures correspondant aux critères.
+    - Affiche chaque voiture correspondante sous forme de liste dans l'élément `resultList`.
+*/ 
+
